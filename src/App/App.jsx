@@ -2,6 +2,12 @@ import { AppFilter, AppInfo, EmployeesAddForm, EmployeesList, SearchPanel } from
 import './App.css';
 
 export const App = () => {
+  const data = [
+    { id: 1, name: 'John C.', salary: 800, increase: false },
+    { id: 2, name: 'Alex M.', salary: 3800, increase: true },
+    { id: 3, name: 'Carl W.', salary: 5800, increase: false },
+  ];
+
   return (
     <div className='app'>
       <AppInfo />
@@ -11,7 +17,7 @@ export const App = () => {
         <AppFilter />
       </div>
 
-      <EmployeesList />
+      <EmployeesList data={data} />
       <EmployeesAddForm />
     </div>
   );

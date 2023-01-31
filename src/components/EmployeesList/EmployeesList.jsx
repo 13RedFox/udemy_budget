@@ -1,12 +1,18 @@
 import { EmployeesListItem } from '../EmployeesListItem';
 import './EmployeesList.css';
 
-export const EmployeesList = () => {
+export const EmployeesList = ({ data }) => {
   return (
     <ul className='app-list list-group'>
-      <EmployeesListItem />
-      <EmployeesListItem />
-      <EmployeesListItem />
+      {[] &&
+        data.map((item) => (
+          <EmployeesListItem
+            key={item.id}
+            name={item.name}
+            salary={item.salary}
+            increase={item.increase}
+          />
+        ))}
     </ul>
   );
 };
